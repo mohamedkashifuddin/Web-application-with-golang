@@ -26,10 +26,15 @@ func main() {
 	http.ListenAndServe(":8080", nil)
 }
 
-func populateTemplates() *template.Template {
-	const templates = "/Users/Admin/Desktop/go-workspace/Web-application-with-golang/templates/"
+func populateTemplates() map[string]*template.Template {
+	/*const templates = "/Users/Admin/Desktop/go-workspace/Web-application-with-golang/templates/"
 	result := template.New("template")
 	const basePath = templates
 	template.Must(result.ParseGlob(basePath + "/*.html"))
-	return result
+	return result */
+
+	result := make(map[string]*template.Template)
+	const basePath = "templetes"
+	layout := template.Must(template.ParseFiles(basePath + "/_layout,html"))
+
 }
